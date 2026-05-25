@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gadir Gacar - Student Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f7f7;
+            color: #003b46;
+        }
+
+        header {
+            background: #07575b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            background: #66a5ad;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        .images img {
+            width: 250px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Hover effect on thumbnail images */
+        .images img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        form input, form textarea {
+            width: 300px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #07575b;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #07575b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #003b46;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* --- LIGHTBOX STYLES --- */
+        .lightbox {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+
+        /* The active state to display lightbox */
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: zoom 0.3s ease;
+        }
+
+        @keyframes zoom {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Control Buttons */
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: #66a5ad;
+        }
+
+        .lightbox-prev, .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 16px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .lightbox-prev:hover, .lightbox-next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #66a5ad;
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* Caption Text */
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="home">
+        <h1>Welcome to Gadir Gacar’s Website</h1>
+        <p>A simple one‑page student portfolio</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#pictures">Pictures</a>
+        <a href="#videos">Videos</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section>
+        <h2>About Gadir</h2>
+        <p>
+            Hello! My name is <strong>Gadir Gacar</strong>. This is my personal student webpage 
+            created as part of a web development project. Here you can find pictures, videos, 
+            and a contact form to reach me.
+        </p>
+    </section>
+
+    <section id="pictures" class="images">
+        <h2>Pictures</h2>
+        <img src="https://via.placeholder.com/600x400?text=Sample+Image+1" alt="Sample Image 1">
+        <img src="https://via.placeholder.com/500x500?text=Sample+Image+2" alt="Sample Image 2">
+        <img src="https://via.placeholder.com/700x400?text=Sample+Image+3" alt="Sample Image 3">
+    </section>
+
+    <section id="videos">
+        <h2>Featured Video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/R7CQJYQklhc?si=Xf90IcjVscomcIeq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label>Name:</label><br>
+            <input type="text" name="name" placeholder="Your name"><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" placeholder="Your email"><br>
+
+            <label>Message:</label><br>
+            <textarea name="message" rows="5" placeholder="Write your message"></textarea><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Gadir Gacar — Student Project</p>
+    </footer>
+
+
+    <div id="customLightbox" class="lightbox">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <a class="lightbox-prev" id="prevLightbox">&#10094;</a>
+        <img class="lightbox-content" id="lightboxImg" src="" alt="">
+        <a class="lightbox-next" id="nextLightbox">&#10095;</a>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script>
+        // Select elements
+        const galleryImages = document.querySelectorAll('.images img');
+        const lightbox = document.getElementById('customLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const closeBtn = document.getElementById('closeLightbox');
+        const prevBtn = document.getElementById('prevLightbox');
+        const nextBtn = document.getElementById('nextLightbox');
+        
+        let currentIndex = 0;
+
+        // Function to open lightbox and update contents
+        function showImage(index) {
+            if (index < 0) {
+                currentIndex = galleryImages.length - 1; // Wrap to last
+            } else if (index >= galleryImages.length) {
+                currentIndex = 0; // Wrap to first
+            } else {
+                currentIndex = index;
+            }
+            
+            const targetImg = galleryImages[currentIndex];
+            lightboxImg.src = targetImg.src;
+            lightboxImg.alt = targetImg.alt;
+            lightboxCaption.textContent = targetImg.alt;
+            
+            lightbox.classList.add('active');
+        }
+
+        // Attach click events to gallery thumbnails
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                showImage(index);
+            });
+        });
+
+        // Close functions
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+        
+        // Close when clicking outside the image container
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Navigation actions
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents lightbox close event
+            showImage(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents lightbox close event
+            showImage(currentIndex + 1);
+        });
+
+        // Keyboard accessibility
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === "Escape") {
+                closeLightbox();
+            } else if (e.key === "ArrowLeft") {
+                showImage(currentIndex - 1);
+            } else if (e.key === "ArrowRight") {
+                showImage(currentIndex + 1);
+            }
+        });
+    </script>
+
+</body>
+</html>
